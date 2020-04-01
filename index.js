@@ -23,8 +23,8 @@ bot.on('start', function(){
         }
     });*/
 
-    bot.postMessageToUser('prabhu', 'Hi, Wear a mask when outdoors',params);
-    bot.postMessageToUser('rosemary', 'Hi, Wear a mask when outdoors',params);
+    bot.postMessageToUser('prabhu', 'Hi, Wear a mask when outdoors. Do you want the latest COVID update?',params);
+    bot.postMessageToUser('rosemary', 'Hi, Wear a mask when outdoors. Do you want the latest COVID update?',params);
 
 });
 
@@ -33,7 +33,7 @@ bot.on('message', (msg)=>{
     switch(msg.type){
         case "message":
             if(msg.channel[0] === 'D' && msg.bot_id === undefined) {
-                bot.postMessage(msg.user, "Visit https://www.dhhs.vic.gov.au/coronavirus-covid-19-daily-update", {as_user:true}) 
+                bot.postMessage(msg.user, "Fed up!! Visit https://www.dhhs.vic.gov.au/coronavirus-covid-19-daily-update", {as_user:true}) 
                 console.log(msg.user);               
             }
             break;
