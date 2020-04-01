@@ -14,16 +14,17 @@ bot.on('start', function(){
     };
 
     bot.postMessageToChannel('general','Stay indoors', params);
-    bot.getUsers()
+    /*bot.getUsers()
     .then((users)=>{
         //console.log(users);
         for(var i=0; i<users.members.length;++i){
             console.log(users.members[i].id);
             console.log(users.members[i].name);
         }
-    });
+    });*/
 
     bot.postMessageToUser('prabhu', 'Hi, Wear a mask when outdoors',params);
+    bot.postMessageToUser('rosemary', 'Hi, Wear a mask when outdoors',params);
 
 });
 
