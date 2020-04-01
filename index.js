@@ -13,7 +13,7 @@ bot.on('start', function(){
         icon_emoji:':mask:'
     };
 
-    bot.postMessageToChannel('general','Stay indoors', params);
+    bot.postMessageToChannel('general','Obey rules! Stay indoors!', params);
     /*bot.getUsers()
     .then((users)=>{
         //console.log(users);
