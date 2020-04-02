@@ -1,5 +1,5 @@
 var Slackbot = require('slackbots');
-
+var request = require('request');
 const mykeys = require('./config/key');
 
 var bot = new Slackbot({
@@ -13,7 +13,7 @@ bot.on('start', function(){
         icon_emoji:':mask:'
     };
 
-    bot.postMessageToChannel('general','Obey rules! Stay indoors!', params);
+    bot.postMessageToChannel('general','Are you dumb? Wear a mask!! Stay indoors!', params);
     /*bot.getUsers()
     .then((users)=>{
         //console.log(users);
@@ -23,8 +23,8 @@ bot.on('start', function(){
         }
     });*/
 
-    bot.postMessageToUser('prabhu', 'Hi, Wear a mask when outdoors. Do you want the latest COVID update?',params);
-    bot.postMessageToUser('rosemary', 'Hi, Wear a mask when outdoors. Do you want the latest COVID update?',params);
+    bot.postMessageToUser('prabhu', 'Hey!  Want to have an insulting match?',params);
+    bot.postMessageToUser('rosemary', 'Hey! Want to have an insulting match?',params);
 
 });
 
@@ -37,11 +37,11 @@ const getRandomJoke = (callback, user) => {
         let joke = jokeJSON.insult
         return callback(joke, user)
       }
-    });
+    })
   }
 
   const postMessage = (message, user) => {
-    bot.postMessage(user, message, { as_user: true });
+    bot.postMessage(user, message, { as_user: true })
   }
 
 bot.on('message', (msg)=>{
