@@ -28,13 +28,30 @@ bot.on('start', function(){
 
 });
 
+const getRandomJoke = (callback, user) => {
+    return request("https://evilinsult.com/generate_insult.php?lang=en&type=json", (error, response) => {
+      if (error) {
+        console.log("Error: ", error)
+      } else {
+        let jokeJSON = JSON.parse(response.body)
+        let joke = jokeJSON.insult
+        return callback(joke, user)
+      }
+    });
+  }
+
+  const postMessage = (message, user) => {
+    bot.postMessage(user, message, { as_user: true });
+  }
+
 bot.on('message', (msg)=>{
 
     switch(msg.type){
         case "message":
             if(msg.channel[0] === 'D' && msg.bot_id === undefined) {
-                bot.postMessage(msg.user, "Fed up!! Visit https://www.dhhs.vic.gov.au/coronavirus-covid-19-daily-update", {as_user:true}) 
-                console.log(msg.user);               
+                getRandomJoke(postMessage,msg.user);
+                //bot.postMessage(msg.user, "Fed up!! Visit https://www.dhhs.vic.gov.au/coronavirus-covid-19-daily-update", {as_user:true}) 
+                
             }
             break;
     }
