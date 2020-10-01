@@ -23,8 +23,8 @@ bot.on('start', function(){
         }
     });*/
 
-    bot.postMessageToUser('prabhu', 'Hey!  Want to have an insulting match?',params);
-    bot.postMessageToUser('rosemary', 'Hey! Want to have an insulting match?',params);
+    bot.postMessageToUser('prabhu', 'Hi!  Want to have an insulting match?',params);
+    bot.postMessageToUser('rosemary', 'Hi! Want to have an insulting match?',params);
 
 });
 
